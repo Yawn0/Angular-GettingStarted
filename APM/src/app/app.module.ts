@@ -17,10 +17,10 @@ import { ProductModule } from './products/product.module';
     RouterModule.forRoot([
       {path: 'welcome', component: WelcomeComponent},
       {path: '', redirectTo: 'welcome', pathMatch: 'full'},
-      {path: '**', redirectTo: 'welcome', pathMatch: 'full'}
+      {path: '**', redirectTo: 'welcome', pathMatch: 'full'}  //WILDCARD, usually used for redirecting to 404 pages
     ]),
     ProductModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent]   //startup component
 })
 export class AppModule { }

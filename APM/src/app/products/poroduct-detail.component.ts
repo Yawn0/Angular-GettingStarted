@@ -15,8 +15,7 @@ export class PoroductDetailComponent implements OnInit {
               private router: Router){}
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.pageTitle += ' ' + id;
+    this.pageTitle += ' : ' + this.route.snapshot.paramMap.get('id');
   }
   
   onBack() : void{

@@ -5,7 +5,6 @@ import { Component, EventEmitter, Input, OnChanges, Output} from "@angular/core"
     templateUrl: './star.component.html',
     styleUrls: ['./star.component.css']
 })
-
 export class StarComponent implements OnChanges{
 
     readonly DEFAULT_CROPWIDTH: number = 75; 

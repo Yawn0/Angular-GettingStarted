@@ -14,7 +14,7 @@ export class ProductService{
 
     getProducts(): Observable<IProduct[]>{
         return this.http.get<IProduct[]>(this.productUrl).pipe(
-            tap(data => console.log('All', JSON.stringify(data))),
+            tap(data => console.log('All', JSON.stringify(data))), // tap() is to look at the observable stream without transforming it
             catchError(this.handleError)
         );
     }
@@ -27,7 +27,7 @@ export class ProductService{
         else{
             errorMessage = 'Server returned code: ' + err.status + ', error message is: ' + err.message;
         }
-        console.log(errorMessage);
+        console.error(errorMessage);
         return throwError(() => errorMessage);
     }
 }

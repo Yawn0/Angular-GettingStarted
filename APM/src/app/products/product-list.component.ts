@@ -7,7 +7,6 @@ import { ProductService } from "./product.service";
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
 })
-
 export class ProductListComponent implements OnInit, OnDestroy{
 
     pageTitle : string = 'Product List';
@@ -41,7 +40,9 @@ export class ProductListComponent implements OnInit, OnDestroy{
 
     performFilter(filterBy: string): IProduct[] {
         filterBy = filterBy.toLocaleLowerCase();
-        return this.products.filter((product: IProduct) => product.productName.toLocaleLowerCase().includes(filterBy));
+        return this.products.filter((product: IProduct) => 
+            product.productName.toLocaleLowerCase().includes(filterBy)
+        );
     }
 
     onRatingClicked(message: string): void{
